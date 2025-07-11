@@ -1,0 +1,23 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+
+  .logo {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+    color: var(--text-color);
+
+    &:hover {
+      color: var(--accent-color);
+    }
+
+    @media (max-width: 768px) {
+      font-size: var(--fs-sm);
+    }
+  }
+}
