@@ -1,7 +1,7 @@
 {
   "rewrites": [
-    { "source": "/proxy/:path*", "destination": "/api/proxy/:path*" },
-    { "source": "/api/:path*", "destination": "/api/:path*" },
+    { "source": "/proxy/:path*", "destination": "https://platform.fintacharts.com/:path*" },
+    { "source": "/api/:path*", "destination": "https://platform.fintacharts.com/:path*" },
     { "source": "/:path*.:ext*", "destination": "/:path*.:ext*" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
