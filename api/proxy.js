@@ -1,5 +1,4 @@
 export default async function handler(req, res) {
-  console.log('PROXY:', req.method, req.url);
   const EXTERNAL_API_BASE = 'https://platform.fintacharts.com';
   const apiUrl = `${EXTERNAL_API_BASE}${req.url.replace('/api/proxy', '')}`;
   const fetchOptions = {
@@ -9,6 +8,7 @@ export default async function handler(req, res) {
   };
   delete fetchOptions.headers.host;
 
+  // Сериализация тела для x-www-form-urlencoded
   if (
     fetchOptions.body &&
     typeof fetchOptions.body === 'object' &&
@@ -16,8 +16,6 @@ export default async function handler(req, res) {
   ) {
     fetchOptions.body = new URLSearchParams(fetchOptions.body).toString();
   }
-
-  console.log('Proxying:', apiUrl, fetchOptions);
 
   const apiRes = await fetch(apiUrl, fetchOptions);
   res.status(apiRes.status);
