@@ -1,3 +1,15 @@
-<div class="container">
-  Hello
+<div>
+  <div class="asset-selector">
+    <app-asset-selector
+      (assetSelected)="onInstrumentSelect($event)">
+    </app-asset-selector>
+  </div>
+
+  <div class="realtime-price">
+    <app-price-ticker [instrument]="selectedInstrument"></app-price-ticker>
+  </div>
+
+  <div class="historical-chart">
+    <app-historical-chart [instrument]="selectedInstrument"></app-historical-chart>
+  </div>
 </div>

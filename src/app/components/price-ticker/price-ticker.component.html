@@ -1,0 +1,19 @@
+<div *ngIf="price && time" class="container ticker-container">
+  <div class="ticker-row">
+    <div class="ticker-col">
+      <div class="ticker-label">Symbol:</div>
+      <div class="ticker-value">{{ instrument?.symbol }}</div>
+    </div>
+    <div class="ticker-col">
+      <div class="ticker-label">Price:</div>
+      <div class="ticker-value">{{ price | number:'1.0-3' }}</div>
+    </div>
+    <div class="ticker-col">
+      <div class="ticker-label">Time:</div>
+      <div class="ticker-value">{{ time | date:'MMM d, h:mm a' }}</div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!price" class="container">
+  Waiting for real-time data...
+</div>

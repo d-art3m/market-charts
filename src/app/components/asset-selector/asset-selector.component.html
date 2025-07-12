@@ -1,0 +1,8 @@
+<div class="container">
+  <label for="asset-select">Choose instrument: </label>
+  <select id="asset-select" (change)="onSelect($event)">
+    <option *ngFor="let instrument of instruments" [value]="instrument.id">
+      {{ instrument.symbol }}
+    </option>
+  </select>
+</div>

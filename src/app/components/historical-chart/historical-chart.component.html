@@ -1,0 +1,10 @@
+<div *ngIf="chartData && chartData.datasets[0].data.length" class="container">
+  <canvas baseChart
+    [data]="chartData"
+    [options]="chartOptions"
+    [type]="'line'">
+  </canvas>
+</div>
+<div *ngIf="!chartData || !chartData.datasets[0].data.length" class="container">
+  No historical data available
+</div>
