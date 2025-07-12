@@ -7,7 +7,7 @@ import { tap, map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class AuthService {
-  private tokenUrl = 'https://platform.fintacharts.com/identity/realms/fintatech/protocol/openid-connect/token';
+  private tokenUrl = '/identity/realms/fintatech/protocol/openid-connect/token';
   private clientId = 'app-cli';
 
   private username = import.meta.env['NG_APP_USERNAME'];
