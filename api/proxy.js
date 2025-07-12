@@ -1,4 +1,5 @@
 export default async function handler(req, res) {
+  console.log('PROXY:', req.method, req.url);
   const EXTERNAL_API_BASE = 'https://platform.fintacharts.com';
   const apiUrl = `${EXTERNAL_API_BASE}${req.url.replace('/api/proxy', '')}`;
   const fetchOptions = {
