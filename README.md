@@ -1,59 +1,36 @@
-# MarketCharts
+# Market Charts
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
+### Live Demo: https://market-charts-ten.vercel.app/
 
-## Development server
+Market Charts is a web application that allows to receive real time market data and historical price charts
+for different market assets.
 
-To start a local development server, run:
+## Tech Stack
 
+- Angular
+- WebSocket
+
+## Installation
+
+1. Clone the repository:
 ```bash
-ng serve
+git clone https://github.com/d-art3m/market-charts
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+2. Install dependencies:
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+3. Create your `.env` file
 
+4. Open the `.env` file and configure the following environment variables:
 ```bash
-ng generate --help
+NG_APP_USERNAME=
+NG_APP_PASSWORD=
 ```
 
-## Building
-
-To build the project run:
-
+5. Run the development server:
 ```bash
-ng build
+ng serve --proxy-config proxy.conf.json
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
