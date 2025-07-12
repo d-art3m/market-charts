@@ -7,6 +7,17 @@ export default async function handler(req, res) {
     body: ['GET', 'HEAD'].includes(req.method) ? undefined : req.body,
   };
   delete fetchOptions.headers.host;
+
+  if (
+    fetchOptions.body &&
+    typeof fetchOptions.body === 'object' &&
+    (fetchOptions.headers['content-type'] === 'application/x-www-form-urlencoded' || fetchOptions.headers['Content-Type'] === 'application/x-www-form-urlencoded')
+  ) {
+    fetchOptions.body = new URLSearchParams(fetchOptions.body).toString();
+  }
+
+  console.log('Proxying:', apiUrl, fetchOptions);
+
   const apiRes = await fetch(apiUrl, fetchOptions);
   res.status(apiRes.status);
   apiRes.headers.forEach((value, key) => {
