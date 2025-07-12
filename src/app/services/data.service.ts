@@ -20,7 +20,7 @@ export class DataService {
         const params = new HttpParams()
           .set('provider', 'oanda')
           .set('kind', 'forex');
-        return this.http.get(`/api/instruments/v1/instruments`, { headers, params });
+        return this.http.get('https://platform.fintacharts.com/api/instruments/v1/instruments', { headers, params });
       })
     );
   }
@@ -35,7 +35,7 @@ export class DataService {
           .set('interval', '1')
           .set('periodicity', 'day')
           .set('barsCount', barsCount.toString());
-        return this.http.get(`/api/bars/v1/bars/count-back`, { headers, params });
+        return this.http.get('https://platform.fintacharts.com/api/bars/v1/bars/count-back', { headers, params });
       })
     );
   }
