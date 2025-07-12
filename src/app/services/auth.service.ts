@@ -19,6 +19,7 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   getAccessToken(): Observable<string> {
+    console.log(this.username, this.password);
     const body = new HttpParams()
       .set('grant_type', 'password')
       .set('client_id', this.clientId)
